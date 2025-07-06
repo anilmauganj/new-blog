@@ -1,0 +1,47 @@
+/app
+│
+├── /Controllers
+│   ├── Admin
+│   │   ├── DashboardController.php
+│   │   ├── PostController.php
+│   │   ├── RoleController.php
+│   │   └── UserController.php
+│   ├── AuthController.php       ← login, register, logout
+│   └── HomeController.php       ← homepage, post detail, category
+
+├── /Models
+│   ├── UserModel.php
+│   ├── PostModel.php
+│   ├── CommentModel.php
+│   ├── RoleModel.php
+│   ├── PermissionModel.php
+│   └── CategoryModel.php
+
+├── /Views
+│   ├── /admin
+│   │   ├── layout.php
+│   │   ├── dashboard.php
+│   │   ├── users/
+│   │   ├── posts/
+│   │   ├── roles/
+│   │   └── permissions/
+│   ├── /frontend
+│   │   ├── layout.php
+│   │   ├── home.php
+│   │   └── post_detail.php
+│   └── /auth
+│       ├── login.php
+│       └── register.php
+
+├── /Filters
+│   ├── AuthGuard.php
+│   └── RolePermissionGuard.php
+
+├── /Config
+│   └── Routes.php
+
+/public
+│
+├── /adminlte         ← AdminLTE assets (dist, plugins)
+└── /uploads          ← images, post uploads
+
