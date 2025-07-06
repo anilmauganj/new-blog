@@ -22,7 +22,7 @@
            aria-label="Main navigation" data-accordion="false" id="navigation">
 
            <li class="nav-item">
-             <a href="dashboard" class="nav-link active">
+             <a href="<?= route_to('admin.dashboard') ?>" class="nav-link active">
                <i class="nav-icon bi bi-speedometer"></i>
                <p>
                  Dashboard
@@ -42,23 +42,18 @@
              </a>
              <ul class="nav nav-treeview">
                <li class="nav-item">
-                 <a href="#" class="nav-link">
+                 <a href="<?= route_to('view.post') ?>" class="nav-link">
                    <i class="nav-icon bi bi-circle"></i>
-                   <p>All Posts</p>
+                   <p>View Posts</p>
                  </a>
                </li>
                <li class="nav-item">
-                 <a href="#" class="nav-link">
+                 <a href="<?= route_to('create.post') ?>" class="nav-link">
                    <i class="nav-icon bi bi-circle"></i>
                    <p>Add Posts</p>
                  </a>
                </li>
-               <li class="nav-item">
-                 <a href="#" class="nav-link">
-                   <i class="nav-icon bi bi-circle"></i>
-                   <p>Draft Posts</p>
-                 </a>
-               </li>
+
              </ul>
            </li>
            <li class="nav-item">
@@ -97,13 +92,13 @@
              </a>
              <ul class="nav nav-treeview">
                <li class="nav-item">
-                 <a href="#" class="nav-link">
+                 <a href="<?= route_to('view.user') ?>" class="nav-link">
                    <i class="nav-icon bi bi-circle"></i>
                    <p>All Users</p>
                  </a>
                </li>
                <li class="nav-item">
-                 <a href="#" class="nav-link">
+                 <a href="<?= route_to('create.user') ?>" class="nav-link">
                    <i class="nav-icon bi bi-circle"></i>
                    <p>Create User</p>
                  </a>
