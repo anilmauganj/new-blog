@@ -5,10 +5,13 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
-// $routes->get('/', 'Home::index');
+$routes->get('/', 'Home::index');
 
+$routes->get('login', 'AuthController::login');
+$routes->post('login', 'AuthController::loginPost');
+$routes->get('logout', 'AuthController::logout');
 
-$routes->group('admin', ['namespace' => 'App\Controllers\Admin'], function($routes)  {
+$routes->group('admin', ['namespace' => 'App\Controllers\Admin','filter' => 'auth'], function($routes)  {
     $routes->get('dashboard', 'DashboardController::index', ['as' => 'admin.dashboard']);
 
     // Post Routes

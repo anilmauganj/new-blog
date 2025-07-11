@@ -43,6 +43,9 @@
   <!-- apexcharts -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/apexcharts@3.37.1/dist/apexcharts.css"
     integrity="sha256-4MX+61mt9NVvvuPjUWdUdyfZfxSB1/Rf9WtqRHgG5S0=" crossorigin="anonymous" />
+
+  <!-- Toastr CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 </head>
 
 <body class="layout-fixed sidebar-expand-lg sidebar-open bg-body-tertiary">
@@ -96,6 +99,8 @@
   </div>
   <!--end::App Wrapper-->
   <!--begin::Script-->
+  <!-- jQuery (required for toastr) -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.11.0/browser/overlayscrollbars.browser.es6.min.js"
     crossorigin="anonymous"></script>
@@ -104,6 +109,9 @@
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+
+  <!-- Toastr JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
   <script src="<?= base_url('adminlte/assets/js/adminlte.js') ?>"></script>
 
@@ -306,6 +314,19 @@
   //-----------------
   // - END PIE CHART -
   //-----------------
+
+  <?php if (session()->has('error')): ?>
+  toastr.error("<?= session('error') ?>");
+  <?php endif; ?>
+  <?php if (session()->has('success')): ?>
+  toastr.success("<?= session('success') ?>");
+  <?php endif; ?>
+  toastr.options = {
+    "closeButton": true,
+    "progressBar": true,
+    "positionClass": "toast-top-right", // or "toast-top-right"
+    "timeOut": "4000"
+  };
   </script>
   <!--end::Script-->
 </body>

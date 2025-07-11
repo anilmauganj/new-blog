@@ -9,10 +9,20 @@ class PostController extends BaseController
 {
     public function index()
     {
+        
         return view('admin/post/index');
     }
 
     public function create() {
+      
+        if(!hasPermission('create_post')) {
+          return redirect()->back()
+                           ->with('error', "Sorry don't have permission.");
+        }
         return view('admin/post/create');
+    }
+
+    public function save() {
+        
     }
 }
