@@ -56,6 +56,14 @@
 
              </ul>
            </li>
+
+           <li class="nav-item">
+             <a href="<?= route_to('post.category') ?>" class="nav-link">
+               <i class="nav-icon bi bi-palette"></i>
+               <p>Categories</p>
+             </a>
+           </li>
+
            <li class="nav-item">
              <a href="#" class="nav-link">
                <i class="nav-icon bi bi-clipboard-fill"></i>

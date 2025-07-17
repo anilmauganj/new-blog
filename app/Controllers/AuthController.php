@@ -34,11 +34,12 @@ class AuthController extends BaseController
             'user_id' => $user['id'],
             'email' => $user['email'],
             'full_name' => $user['full_name'],
-            'role_id' => $user['role_id'],
+            'role' => $role['name'],
             'isLoggedIn' => true
         ]);
 
-        return redirect()->to('admin/dashboard');
+        return redirect()->to('admin/dashboard')
+                         ->with('success', 'You are logged in successfully.');
         
     }
 

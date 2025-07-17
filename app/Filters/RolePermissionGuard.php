@@ -23,8 +23,11 @@ class RolePermissionGuard implements FilterInterface
      *
      * @return RequestInterface|ResponseInterface|string|void
      */
+
+    
     public function before(RequestInterface $request, $arguments = null)
     {
+        helper('permission');
        $permission = $arguments[0] ?? null;
 
        if($permission && !hasPermission($permission)) {

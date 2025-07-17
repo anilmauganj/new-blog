@@ -46,16 +46,21 @@
 
   <!-- Toastr CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+  <!-- DataTables CSS -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+
+  <!-- SweetAlert2 CSS & JS -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body class="layout-fixed sidebar-expand-lg sidebar-open bg-body-tertiary">
   <!--begin::App Wrapper-->
   <div class="app-wrapper">
     <!--begin::Header-->
-    <?= $this->include('admin/partials/topbar'); ?>
+    <?= view('admin/partials/topbar'); ?>
     <!--end::Header-->
     <!--begin::Sidebar-->
-    <?= $this->include('admin/partials/sidebar'); ?>
+    <?= view('admin/partials/sidebar'); ?>
     <!--end::Sidebar-->
     <!--begin::App Main-->
     <main class="app-main">
@@ -66,17 +71,7 @@
         <!--begin::Container-->
         <div class="container-fluid">
           <!--begin::Row-->
-          <div class="row">
-            <div class="col-sm-6">
-              <h3 class="mb-0">Dashboard v2</h3>
-            </div>
-            <div class="col-sm-6">
-              <ol class="breadcrumb float-sm-end">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Dashboard v2</li>
-              </ol>
-            </div>
-          </div>
+          <?= view('admin/partials/title_breadcrumb') ?>
           <!--end::Row-->
         </div>
         <!--end::Container-->
@@ -94,7 +89,7 @@
     </main>
     <!--end::App Main-->
     <!--begin::Footer-->
-    <?= $this->include('admin/partials/footer'); ?>
+    <?= view('admin/partials/footer'); ?>
     <!--end::Footer-->
   </div>
   <!--end::App Wrapper-->
@@ -112,6 +107,9 @@
 
   <!-- Toastr JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+  <!-- DataTables JS -->
+  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
 
   <script src="<?= base_url('adminlte/assets/js/adminlte.js') ?>"></script>
 
@@ -328,6 +326,8 @@
     "timeOut": "4000"
   };
   </script>
+
+  <?= $this->renderSection('scripts') ?>
   <!--end::Script-->
 </body>
 <!--end::Body-->

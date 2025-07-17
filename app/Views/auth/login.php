@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>AdminLTE 4 | Login Page</title>
+  <title>Login Page</title>
   <!--begin::Accessibility Meta Tags-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="color-scheme" content="light dark" />
@@ -12,12 +12,10 @@
   <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)" />
   <!--end::Accessibility Meta Tags-->
   <!--begin::Primary Meta Tags-->
-  <meta name="title" content="AdminLTE 4 | Login Page" />
+  <meta name="title" content=" Login Page" />
   <meta name="author" content="ColorlibHQ" />
-  <meta name="description"
-    content="AdminLTE is a Free Bootstrap 5 Admin Dashboard, 30 example pages using Vanilla JS. Fully accessible with WCAG 2.1 AA compliance." />
-  <meta name="keywords"
-    content="bootstrap 5, bootstrap, bootstrap 5 admin dashboard, bootstrap 5 dashboard, bootstrap 5 charts, bootstrap 5 calendar, bootstrap 5 datepicker, bootstrap 5 tables, bootstrap 5 datatable, vanilla js datatable, colorlibhq, colorlibhq dashboard, colorlibhq admin dashboard, accessible admin panel, WCAG compliant" />
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
   <!--end::Primary Meta Tags-->
   <!--begin::Accessibility Features-->
   <!-- Skip links will be dynamically added by accessibility.js -->
@@ -37,6 +35,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
     crossorigin="anonymous" />
   <!--end::Third Party Plugin(Bootstrap Icons)-->
+
   <!--begin::Required Plugin(AdminLTE)-->
   <link rel="stylesheet" href="<?= base_url("adminlte/assets/css/adminlte.css") ?>" />
   <!--end::Required Plugin(AdminLTE)-->
@@ -58,6 +57,12 @@
         <?php if(session()->getFlashdata('error')):  ?>
         <p style="color:red"><?= session()->getFlashData('error'); ?></p>
         <?php endif;  ?>
+
+        <?php if ($msg = session()->getFlashdata('success')) : ?>
+        <div class="alert alert-success">
+          <?= $msg  ?>
+        </div>
+        <?php endif; ?>
 
         <form action="<?= base_url('login') ?>" method="post">
           <?= csrf_field(); ?>
@@ -106,6 +111,9 @@
     </div>
   </div>
   <!-- /.login-box -->
+
+
+
   <!--begin::Third Party Plugin(OverlayScrollbars)-->
   <script src="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.11.0/browser/overlayscrollbars.browser.es6.min.js"
     crossorigin="anonymous"></script>
@@ -117,6 +125,8 @@
   <!--begin::Required Plugin(Bootstrap 5)-->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
   <!--end::Required Plugin(Bootstrap 5)-->
+
+
   <!--begin::Required Plugin(AdminLTE)-->
   <script src="<?= base_url('adminlte/assets/js/adminlte.js') ?>"></script>
   <!--end::Required Plugin(AdminLTE)-->
